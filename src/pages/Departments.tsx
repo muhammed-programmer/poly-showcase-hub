@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const departments = [
   {
@@ -50,17 +51,22 @@ const Departments = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {departments.map((dept) => (
-            <Card key={dept.name} className="hover:shadow-lg transition-shadow cursor-pointer">
-              <CardHeader>
-                <div className={`h-2 w-full ${dept.color} rounded-full mb-4`} />
-                <CardTitle>{dept.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Badge variant="secondary" className="text-lg">
-                  {dept.projectCount} Projects
-                </Badge>
-              </CardContent>
-            </Card>
+            <Link 
+              key={dept.name} 
+              to={`/department/${dept.name.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                <CardHeader>
+                  <div className={`h-2 w-full ${dept.color} rounded-full mb-4`} />
+                  <CardTitle>{dept.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Badge variant="secondary" className="text-lg">
+                    {dept.projectCount} Projects
+                  </Badge>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </main>
