@@ -47,6 +47,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        hero: {
+          overlay: "hsl(var(--hero-overlay))",
+        },
+        stats: {
+          bg: "hsl(var(--stats-bg))",
+        },
+        badge: {
+          approved: "hsl(var(--badge-approved))",
+          pending: "hsl(var(--badge-pending))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
